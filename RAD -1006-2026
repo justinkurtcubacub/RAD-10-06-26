@@ -1,0 +1,70 @@
+import java.util.Scanner;
+public class Main{
+    static int add(int x, int z){
+        return x + z;
+    }
+    static int minus(int x, int z){
+        return x - z;
+    }
+    static int multiply(int x, int z){
+        return x * z;
+    }
+    static int divide(int x, int z){
+        return x / z;
+    }
+    public static void main(String[] args){
+        Scanner scanner = new Scanner(System.in);
+
+        // #1 Diagnostic Activity ( Data Types )
+        System.out.print("What is your name: ");
+        String name = scanner.nextLine();
+        System.out.print("What is your age: ");
+        int age = scanner.nextInt();
+        System.out.print("What is your Height: ");
+        double height = scanner.nextFloat();
+        String height1 = String.format("%.2f", height);
+        System.out.print("What is your Weight: ");
+        double weight = scanner.nextDouble();
+        String weight1 = String.format("%.2f", weight);
+        System.out.println("===== YOUR PROFILE =====");
+        System.out.println("Your Name: " + name);
+        System.out.println("Your Age: " + age);
+        System.out.println("Your Height: " + height1);
+        System.out.println("Your Weight: " + weight1);
+
+        // #2 Diagnostic Activity Switch Case, And Loops
+        while (true){
+            System.out.println("=========================");
+            System.out.println("Calculator");
+
+            System.out.print("Enter your x: ");
+            int x = scanner.nextInt();
+            System.out.print("Enter your z: ");
+            int z = scanner.nextInt();
+            System.out.println("Type 'STOP' to stop the program");
+            System.out.print("Choose your Arithmetic Operator (ADD,MINUS,MULTIPLY,DIVIDE): ");
+            String operator = scanner.next();
+            String operator1 = operator.toUpperCase();
+        if (operator1.equals("STOP")){
+            System.out.println("Thank you for using the Program");
+            break;
+        }
+            switch (operator1) {
+                case "ADD":
+                    System.out.println("Result: " + add(x, z));
+                    break;
+                case "MINUS":
+                    System.out.println("Result: " + minus(x, z));
+                    break;
+                case "MULTIPLY":
+                    System.out.println("Result: " + multiply(x, z));
+                    break;
+                case "DIVIDE":
+                    System.out.println("Result: " + divide(x, z));
+                    break;
+                default:
+                    System.out.println("Invalid Input");
+            }
+        }
+        }
+    }
